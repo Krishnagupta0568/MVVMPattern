@@ -42,7 +42,7 @@ namespace MVVMPattern.ViewModel
         public ObservableCollection<Employee> EmployeesList
         {
             get{ return employeesList; }
-            set { employeesList = value;  OnPropertyChanged("EmployeeList"); }
+            set { employeesList = value;  OnPropertyChanged("EmployeesList"); }
         }
 
         private void LoadData()
@@ -83,11 +83,14 @@ namespace MVVMPattern.ViewModel
         {
             try
             {
+                //List<Employee> newemp = new List<Employee>(); 
+                //employeesList.Add(CurrentEmployee);
                 var IsSaved = ObjEmployeeService.Add(CurrentEmployee);
                 LoadData();
                 if (IsSaved)
                 {
                     Message = "Employee Saved";
+                    LoadData();
                 }
                 else
                     Message = "Save Operation Failed";
