@@ -25,8 +25,8 @@ namespace MVVMPattern.Model
 
         public bool Add(Employee objNewEmployee)
         {
-            //if (objNewEmployee.Age < 21 || objNewEmployee.Age > 58)
-            //    throw new ArgumentException("Invalid Age For Employee");
+            if (objNewEmployee.Age < 21 || objNewEmployee.Age > 58)
+                throw new ArgumentException("Invalid Age For Employee");
             ObjEmployeesList.Add(objNewEmployee);
             return true;
         }

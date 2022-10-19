@@ -90,7 +90,6 @@ namespace MVVMPattern.ViewModel
                 if (IsSaved)
                 {
                     Message = "Employee Saved";
-                    LoadData();
                 }
                 else
                     Message = "Save Operation Failed";
